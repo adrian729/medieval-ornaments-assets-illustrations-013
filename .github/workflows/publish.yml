@@ -14,8 +14,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    uses: adrian729/medieval-ornaments/.github/workflows/publish-resource.yml@828def74ba3725bfe5e1cdac0db6b088ace32bab
+    uses: adrian729/medieval-ornaments/.github/workflows/publish-resource.yml@588520054b7390b6acae313349dfc1d43ba0beeb
     with:
       source: illustrations-013
-      tooling-ref: 828def74ba3725bfe5e1cdac0db6b088ace32bab
+      tooling-ref: 588520054b7390b6acae313349dfc1d43ba0beeb
       check-authentication: ${{ inputs.check-authentication }}
