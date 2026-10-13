@@ -1,0 +1,21 @@
+name: Publish approved resources
+on:
+  workflow_dispatch:
+    inputs:
+      check-authentication:
+        description: Verify npm OIDC without publishing
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: resource-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    uses: adrian729/medieval-ornaments/.github/workflows/publish-resource.yml@828def74ba3725bfe5e1cdac0db6b088ace32bab
+    with:
+      source: illustrations-013
+      tooling-ref: 828def74ba3725bfe5e1cdac0db6b088ace32bab
+      check-authentication: ${{ inputs.check-authentication }}
